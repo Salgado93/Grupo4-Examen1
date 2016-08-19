@@ -1,4 +1,4 @@
-//#include "Pokemon.h"
+#include "Pokemon.h"
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -9,17 +9,20 @@ int menu();
 
 int main(int argc, char* argv[]){
 	int opcion;
-	//vector <Pokemon*> pokemons;
+	vector <Pokemon*> pokemons;
 	while((opcion = menu()) != 6 ){
 		if(opcion == 1){
 			int legend;
 			string nombre;
+			string naturaleza;
 			string tipo1 = "";
 			string tipo2 = "";	
 			int nivel, hp,ataque,defensa, ataqueE,defensaE,rapidez;
 			bool legendario;
 			cout << "Ingrese El Nombre: " << endl;
 			cin >> nombre;
+			cout << "Ingrese La Naturalez" << endl;
+			cin >> naturaleza; 
 			cout << "Ingrese El Nivel: " << endl;
 			cin >> nivel;
 			cout << "Ingrese El Tipo 1: " << endl;
@@ -34,13 +37,13 @@ int main(int argc, char* argv[]){
 			}else{
 				legendario = false;
 			}
-			//pokemons.push_back(new Pokemon(nombre, tipo1, tipo2, nivel,hp,ataque,defensa,ataqueE,defensaE,rapidez,legendario));
+			pokemons.push_back(new Pokemon(nombre,nivel,naturaleza,tipo1,tipo2,hp,ataque,defensa,ataqueE,defensaE,rapidez,legendario));
 			cout << "AGREGADO!" << endl;
 		}
 		if(opcion == 2){
-			/*int opcion;
+			int opcion;
 			int pos;
-			while(op != 3){
+			while(opcion != 3){
 				string nombre;
 				int nivel;
 				for (int i=0; i<pokemons.size(); i++){
@@ -65,7 +68,7 @@ int main(int argc, char* argv[]){
                                         cout << i << " " << pokemons[i]->toString() << endl;
                                 }
 					
-			}*/
+			}
 				
 		}
 		if(opcion == 3){
