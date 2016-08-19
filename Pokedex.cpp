@@ -8,7 +8,7 @@ int menu();
 
 
 int main(int argc, char* argv[]){
-	int opcion;
+	int opcion=0;
 	vector <Pokemon*> pokemons;
 	while((opcion = menu()) != 6 ){
 		if(opcion == 1){
@@ -38,6 +38,7 @@ int main(int argc, char* argv[]){
 				legendario = false;
 			}
 			pokemons.push_back(new Pokemon(nombre,nivel,naturaleza,tipo1,tipo2,hp,ataque,defensa,ataqueE,defensaE,rapidez,legendario));
+			pokemons[0]->toString();
 			cout << "AGREGADO!" << endl;
 		}
 		if(opcion == 2){
@@ -62,7 +63,7 @@ int main(int argc, char* argv[]){
 				if(opcion == 2){
 					cout << "Ingrese El Nivel: " << endl;
 					cin >> nivel;
-					pokemons[pos]->setNivel(nivel)
+					pokemons[pos]->setNivel(nivel);
 				}
 				for (int i=0; i<pokemons.size(); i++){
                                         cout << i << " " << pokemons[i]->toString() << endl;
@@ -72,17 +73,18 @@ int main(int argc, char* argv[]){
 				
 		}
 		if(opcion == 3){
+			int pos;
 			for (int i=0; i<pokemons.size(); i++){
-				if(pokemons[i]->getLegendary == false){
+				if(pokemons[i]->getLegendary() == false){
 						cout << i << " " << pokemons[i]->toString() << endl;
 
 				}
                         }
 			cout << "Ingrese La Posicion A Borrar: " << endl;
 			cin >> pos;
-			pokemons.erase(pokemons.begin()+posicion);
+			pokemons.erase(pokemons.begin()+pos);
 			for (int i=0; i<pokemons.size(); i++){
-                                if(pokemons[i]->getLegendary == false){
+                                if(pokemons[i]->getLegendary() == false){
                                                 cout << i << " " << pokemons[i]->toString() << endl;
 
                                 }
@@ -98,7 +100,7 @@ int menu(){
 	cout << "1. Agregar Pokemons" << endl;
 	cout << "2. Modificar Pokemons" << endl;
 	cout << "3. Eliminar Pokemons" << endl;
-	cout << "6. Salir" << endl;
+	cout << "4. Salir" << endl;
 	cin >> opcion;
 	return opcion;
 
