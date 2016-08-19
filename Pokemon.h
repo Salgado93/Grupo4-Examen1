@@ -26,9 +26,7 @@ class Pokemon
 
            void setNombre(string);
            void setNivel(int);
-	   
-  	   string toString()const;
-	
+
            string getNombre();
            int getNivel();
            string getNaturaleza();
@@ -41,12 +39,8 @@ class Pokemon
            int getSP_DEF();
            int getSPEED();
            bool getLegendary();
-<<<<<<< HEAD
 
            void toString()const;
            
-=======
-		
->>>>>>> 16231f01a0bd4940c7fa1abc3524cf272a752065
            ~Pokemon();
 };
