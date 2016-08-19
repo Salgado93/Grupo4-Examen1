@@ -22,7 +22,7 @@ class Pokemon
             bool Legendary;
 
     public:
-           Pokemon(string, int, string, string, string, int, int, int, int, int, int, string);
+           Pokemon(string, int, string, string, string, int, int, int, int, int, int, bool);
 
            void setNombre(string);
            void setNivel(int);
@@ -38,7 +38,7 @@ class Pokemon
            int getSP_ATK();
            int getSP_DEF();
            int getSPEED();
-           string getLEgendary();
+           bool getLegendary();
 
            ~Pokemon();
 };
