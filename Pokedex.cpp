@@ -20,8 +20,8 @@ int main(int argc, char* argv[]){
 			int legend;
 			string nombre;
 			string naturaleza;
-			string tipo1 = "";
-			string tipo2 = "";	
+			string tipo1;
+			string tipo2;	
 			int nivel, hp,ataque,defensa, ataqueE,defensaE,rapidez;
 			bool legendario;
 			cout << "Ingrese El Nombre: " << endl;
@@ -34,6 +34,18 @@ int main(int argc, char* argv[]){
 			cin >> tipo1;
 			cout << "Ingrese El Tipo 2: " << endl;
 			cin >> tipo2;
+			cout << "Ingrese El HP: " << endl;
+			cin >> hp;
+			cout << "Ingrese El ATAQUE: " << endl;
+			cin >> ataque;
+			cout << "Ingrese LA DEFENSA: " << endl;
+			cin >> defensa;
+			cout << "Ingrese Ataque Especial: " << endl;
+			cin >> ataqueE;
+			cout << "Ingrese La Defensa Especial: " << endl;
+			cin >> defensaE;
+			cout << "Ingrese La Rapidez: " << endl;
+			cin >> rapidez;
 			cout << "1. Legendario: SI " << endl;
 			cout << "2. Legendario: NO " << endl;
 			cin >> legend;
@@ -48,7 +60,7 @@ int main(int argc, char* argv[]){
 			cout << "AGREGADO!" << endl;
 		}		
 		if(opcion == 2){
-			int opcion;
+			int op;
 			int pos;
 			while(opcion != 3){
 				string nombre;
@@ -60,17 +72,18 @@ int main(int argc, char* argv[]){
 				cin >> pos;
 				cout << "1. Modificar Nombre " << endl;
  	 	                cout << "2. Modificar Nivel " << endl;
-				cin >> opcion;
-				if(opcion == 1){
+				cin >> op;
+				if(op == 1){
 					cout << "Ingrese El Nombre: " << endl;
 					cin >> nombre;
 					pokemons[pos]->setNombre(nombre);
 				}
-				if(opcion == 2){
+				if(op == 2){
 					cout << "Ingrese El Nivel: " << endl;
 					cin >> nivel;
 					pokemons[pos]->setNivel(nivel);
 				}
+				cout << "POKEMON MODIFICADO" << endl;
 				for (int i=0; i<pokemons.size(); i++){
                                         cout << i << " " << pokemons[i]->toString() << endl;
                                 }
