@@ -72,10 +72,22 @@ int main(int argc, char* argv[]){
 				
 		}
 		if(opcion == 3){
-			
-		}
-		
+			for (int i=0; i<pokemons.size(); i++){
+				if(pokemons[i]->getLegendary == false){
+						cout << i << " " << pokemons[i]->toString() << endl;
 
+				}
+                        }
+			cout << "Ingrese La Posicion A Borrar: " << endl;
+			cin >> pos;
+			pokemons.erase(pokemons.begin()+posicion);
+			for (int i=0; i<pokemons.size(); i++){
+                                if(pokemons[i]->getLegendary == false){
+                                                cout << i << " " << pokemons[i]->toString() << endl;
+
+                                }
+                        }  			
+		}
 	}
 	return 0;
 }
