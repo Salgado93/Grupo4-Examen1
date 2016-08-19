@@ -40,5 +40,7 @@ class Pokemon
            int getSPEED();
            bool getLegendary();
 
+           void toString()const;
+           
            ~Pokemon();
 };
