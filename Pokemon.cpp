@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Pokemon.h"
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -19,7 +20,7 @@ bool Legendary;
 
 Pokemon::Pokemon(string Nombre, int Nivel, string Naturaleza, string Tipo1, string Tipo2, int HP, int ATK, int DEF, int SP_ATK, int SP_DEF, int SPEED, bool Legendary)
 {
-  this-> Nombre = Nombre;
+  this-> Nombre =  Nombre;
   this-> Nivel = Nivel;
   this-> Naturaleza = Naturaleza;
   this-> Tipo1 = Tipo1;
@@ -111,6 +112,13 @@ int Pokemon::getSPEED()
 bool Pokemon::getLegendary()
 {
     return Legendary;
+}
+
+string Pokemon::toString()const
+{
+  stringstream ss;
+  ss<< "\nNombre: " << Nombre << "\nNivel: " << Nivel << "\nNaturaleza: " << Naturaleza << "\nTipo1: " << Tipo1 << "\nTipo2: " << Tipo2 << "\nHP: " << HP << "\nATK: " << ATK << "\nDEF: " << DEF << "\nSP ATK: " << SP_ATK << "\nSP DEF" << SP_DEF << "\nSPEED: " << SPEED << "\nLegendario: " << Legendary;
+  return ss.str();
 }
 
 Pokemon::~Pokemon()
