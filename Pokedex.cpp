@@ -3,12 +3,17 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-using namespace  std;
+using std::cout;
+using std::cin;
+using std::cerr;
+using std::endl;
+using std::vector;
+
 int menu();
 
 
 int main(int argc, char* argv[]){
-	int opcion=0;
+	int opcion;
 	vector <Pokemon*> pokemons;
 	while((opcion = menu()) != 6 ){
 		if(opcion == 1){
@@ -21,7 +26,7 @@ int main(int argc, char* argv[]){
 			bool legendario;
 			cout << "Ingrese El Nombre: " << endl;
 			cin >> nombre;
-			cout << "Ingrese La Naturalez" << endl;
+			cout << "Ingrese La Naturaleza" << endl;
 			cin >> naturaleza; 
 			cout << "Ingrese El Nivel: " << endl;
 			cin >> nivel;
@@ -34,13 +39,14 @@ int main(int argc, char* argv[]){
 			cin >> legend;
 			if(legend == 1){
 				legendario = true;
-			}else{
+			}
+			if(legend == 2){
 				legendario = false;
 			}
 			pokemons.push_back(new Pokemon(nombre,nivel,naturaleza,tipo1,tipo2,hp,ataque,defensa,ataqueE,defensaE,rapidez,legendario));
-			pokemons[0]->toString();
+			
 			cout << "AGREGADO!" << endl;
-		}
+		}		
 		if(opcion == 2){
 			int opcion;
 			int pos;
@@ -70,6 +76,7 @@ int main(int argc, char* argv[]){
                                 }
 					
 			}
+			
 				
 		}
 		if(opcion == 3){
@@ -88,7 +95,7 @@ int main(int argc, char* argv[]){
                                                 cout << i << " " << pokemons[i]->toString() << endl;
 
                                 }
-                        }  			
+                        } 			
 		}
 	}
 	return 0;

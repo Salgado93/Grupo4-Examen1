@@ -40,7 +40,7 @@ class Pokemon
            int getSPEED();
            bool getLegendary();
 
-           void toString()const;
+           virtual string toString()const;
            
            ~Pokemon();
 };

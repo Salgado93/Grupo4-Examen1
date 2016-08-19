@@ -114,9 +114,9 @@ bool Pokemon::getLegendary()
     return Legendary;
 }
 
-void Pokemon::toString()const
+string Pokemon::toString()const
 {
-  cout<< "\nNombre: " << Nombre << "\nNivel: " << Nivel << "\nNaturaleza: " << Naturaleza << "\nTipo1: " << Tipo1 << "\nTipo2: " << Tipo2 << "\nHP: " << HP << "\nATK: " << ATK << "\nDEF: " << DEF << "\nSP ATK: " << SP_ATK << "\nSP DEF" << SP_DEF << "\nSPEED: " << SPEED << "\nLegendario: " << Legendary;
+  cout<< "\nNombre: " << Nombre << "\nNivel: " << Nivel << "\nNaturaleza: " << Naturaleza << "\nTipo1: " << Tipo1 << "\nTipo2: " << Tipo2 << "\nHP: " << HP << "\nATK: " << ATK << "\nDEF: " << DEF << "\nSP ATK: " << SP_ATK << "\nSP DEF" << SP_DEF << "\nSPEED: " << SPEED << "\nLegendario: " << Legendary << endl;
 }
 
 Pokemon::~Pokemon()
