@@ -15,7 +15,7 @@ int menu();
 int main(int argc, char* argv[]){
 	int opcion;
 	vector <Pokemon*> pokemons;
-	while((opcion = menu()) != 5 ){
+	while((opcion = menu()) != 6 ){
 		if(opcion == 1){
 			int legend;
 			string nombre;
@@ -139,18 +139,270 @@ int main(int argc, char* argv[]){
 			}
 			
 		}
-	}
+		if(opcion == 5){
+			cout<< "Ingrese opcion! \n1. Nombre \n2. Naturaleza \n3. Niveles \n4. Stats";
+  int opc;
+  cin>> opc;
+
+  if (opc == 1)
+  {
+    string nomb;
+    cout<< "Ingrese el nombre del pokemon!";
+    cin>> nomb;
+      
+
+    cout<< "Los Pokemons son:" << endl;
+    for (int i = 0; i < pokemons.size(); ++i)
+    {
+       cout<< i << ". " << pokemons[i]->getNombre();
+    
+  }
+
+  if (opc == 2)
+  {
+    string natu;
+    cout<< "Ingrese la Naturaleza del pokemon!";
+    cin>> natu;
+
+    for (int i = 0; i < pokemons.size(); ++i)
+    {
+      
+      if (pokemons[i]->getNaturaleza() == natu)
+      {
+        cout<< i << ". " << pokemons[i]->getNaturaleza();
+      }
+    }
+    
+  }
+
+  if (opc == 3)
+  {
+    int opc2;
+    cout<< "Ingrese tipo de dato! \n1. Nivel \n2. HP \n3. ATK \n4. DEF \n5. SP_ATK \n6. SP_DEF \n SPEED" << endl;
+    cin>> opc2;
+
+    if (opc2 == 1)
+    {
+    cout<< "Ingrese opcion para operador de comparacion! \n1. igual a \n2. Diferente de \n3. Menor que \n4. Mayor que \n5. Mayor o igual que \n6. Menor o igual que" << endl;
+    int opc3;
+    cin>> opc3;
+
+     if (opc3 == 1)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() == valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getNombre() << "LVL: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+     if (opc3 == 2)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() != valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getNombre() << "LVL: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+      if (opc3 == 3)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() < valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getNombre() << "LVL: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+      if (opc3 == 4)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() > valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getNombre() << "LVL: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+      if (opc3 == 5)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() >= valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getNombre() << "LVL: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+     if (opc3 == 6)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() <= valor) 
+         {
+          cout<< i << ". " <<  pokemons[i]->getNombre() << "LVL: " << pokemons[i]->getNivel();
+         }
+        }
+      }
+
+
+
+
+
+      if (opc2 == 2)
+      {
+        cout<< "Ingrese opcion para operador de comparacion! \n1. igual a \n2. Diferente de \n3. Menor que \n4. Mayor que \n5. Mayor o igual que \n6. Menor o igual que" << endl;
+    int opc3;
+    cin>> opc3;
+
+     if (opc3 == 1)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() == valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getHP() << "HP: " << pokemons[i]->getNivel() << endl;
+        } 
+      }
+    }
+
+     if (opc3 == 2)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() != valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getHP() << "HP: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+      if (opc3 == 3)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() < valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getHP() << "HP: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+      if (opc3 == 4)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() > valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getHP() << "HP: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+
+      if (opc3 == 5)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+ 
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() >= valor) 
+        {
+          cout<< i << ". " << pokemons[i]->getHP() << "HP: " << pokemons[i]->getNivel() << endl;
+        }
+      }
+    }
+     if (opc3 == 6)
+      {
+      cout<< "Ingrese valor!";
+      int valor;
+      cin>> valor;
+
+  
+
+      for (int i = 0; i < pokemons.size(); ++i)
+      {
+        if (pokemons[i]->getNivel() <= valor) 
+         {
+          cout<< i << ". " << pokemons[i]->getHP() << "HP: " << pokemons[i]->getNivel() << endl;
+         }
+        }
+      }
+      }
+    }
+    
+  }
+	}}}
 	return 0;
 }
 
 int menu(){
 	int opcion;
+	cout << endl;
 	cout << "----------Menu----------" << endl;
 	cout << "1. Agregar Pokemons" << endl;
 	cout << "2. Modificar Pokemons" << endl;
 	cout << "3. Eliminar Pokemons" << endl;
 	cout << "4. Buscar Pokemons Por Tipo" << endl;
-	cout << "5. Salir" << endl;
+	cout << "5. Opcion Buscar " << endl; 
+	cout << "6. Salir" << endl;
 	cin >> opcion;
 	return opcion;
 
