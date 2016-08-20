@@ -32,7 +32,7 @@ int main(int argc, char* argv[]){
 			cin >> nivel;
 			cout << "Ingrese El Tipo 1: " << endl;
 			cin >> tipo1;
-			cout << "Ingrese El Tipo 2 O Escriba Sin" << endl;
+			cout << "Ingrese El Tipo 2 O Escriba Sin:" << endl;
 			cin >> tipo2;
 			cout << "Ingrese El HP: " << endl;
 			cin >> hp;
@@ -115,6 +115,7 @@ int main(int argc, char* argv[]){
 			while(op != 3){
 				cout << "1. Por 1 Tipo " << endl;
 				cout << "2. Por 2 Tipos" << endl;
+				cout << "3. Salir" << endl;
 				cin >> op;
 				if(op == 1){
 					int pos;
