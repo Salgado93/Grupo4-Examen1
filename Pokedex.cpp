@@ -15,13 +15,13 @@ int menu();
 int main(int argc, char* argv[]){
 	int opcion;
 	vector <Pokemon*> pokemons;
-	while((opcion = menu()) != 6 ){
+	while((opcion = menu()) != 5 ){
 		if(opcion == 1){
 			int legend;
 			string nombre;
 			string naturaleza;
-			string tipo1;
-			string tipo2;	
+			string tipo1="Sin";
+			string tipo2="Sin";	
 			int nivel, hp,ataque,defensa, ataqueE,defensaE,rapidez;
 			bool legendario;
 			cout << "Ingrese El Nombre: " << endl;
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]){
 			cin >> nivel;
 			cout << "Ingrese El Tipo 1: " << endl;
 			cin >> tipo1;
-			cout << "Ingrese El Tipo 2: " << endl;
+			cout << "Ingrese El Tipo 2 O Escriba Sin" << endl;
 			cin >> tipo2;
 			cout << "Ingrese El HP: " << endl;
 			cin >> hp;
@@ -110,6 +110,34 @@ int main(int argc, char* argv[]){
                                 }
                         } 			
 		}
+		if(opcion == 4){
+			int op;
+			while(op != 3){
+				cout << "1. Por 1 Tipo " << endl;
+				cout << "2. Por 2 Tipos" << endl;
+				cin >> op;
+				if(op == 1){
+					int pos;
+					for (int i=0; i<pokemons.size(); i++){
+						if(pokemons[i]->getTipo2() == "Sin"){
+							cout << i << " " << pokemons[i]->getTipo1() << endl;
+						}
+                        		}
+					cout << "Ingrese El Tipo A Buscar: " << endl;
+					cin >> pos;
+					for (int i=0; i<pokemons.size(); i++){
+						if(pokemons[i]->getTipo1() == pokemons[pos]->getTipo1()	){
+							cout << i << " " << pokemons[i]->toString() << endl;
+						}
+                        		}
+				}
+				if(op == 2){
+
+				}
+				
+			}
+			
+		}
 	}
 	return 0;
 }
@@ -120,7 +148,8 @@ int menu(){
 	cout << "1. Agregar Pokemons" << endl;
 	cout << "2. Modificar Pokemons" << endl;
 	cout << "3. Eliminar Pokemons" << endl;
-	cout << "4. Salir" << endl;
+	cout << "4. Buscar Pokemons Por Tipo" << endl;
+	cout << "5. Salir" << endl;
 	cin >> opcion;
 	return opcion;
 
